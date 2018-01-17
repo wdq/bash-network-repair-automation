@@ -8,10 +8,10 @@
 # sudo apt-get install ifupdown fping
 #
 # 2) Create a tmp file in any folder you like (remember to customize network_check_tries_file variable) with the following command:
-# sudo touch /home/pi/scripts/network_check/network_check_tries.txt && sudo chmod 777 /home/pi/network_check//network_check_tries.txt
+# sudo touch /home/pi/network_check_tries.txt && sudo chmod 777 /home/pi/network_check_tries.txt
 #
 # 3) Then install this script into a folder and add to your crontab -e this row:
-# */5 * * * * /yourhome/yourname/network_check.sh
+# */5 * * * * /home/pi/network_check.sh
 #
 # Note:
 # If additionally you want to perform automatic repair fsck at reboot
@@ -25,7 +25,7 @@ clear
 gateway_ip='172.29.0.1'
 
 # Specify the path of a txt file where the network failures count will be held
-network_check_tries_file='/home/pi/scripts/network_check/network_check_tries.txt'
+network_check_tries_file='/home/pi/network_check_tries.txt'
 
 # Save into a variable its content
 network_check_tries=`cat $network_check_tries_file`
