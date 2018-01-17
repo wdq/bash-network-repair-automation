@@ -60,6 +60,7 @@ echo "Network was not working for the previous $network_check_tries checks."
     else
         echo "Network is down..." && echo 0 > $network_check_tries_file
         /home/pi/src/firmware-smalldata/iface_firmware/gatewayOff
+        /sbin/smalldata/fonaOff
         timestamp=$(date +%s)
         waketime="$((timestamp + 60))"
         /home/pi/src/firmware-smalldata/iface_firmware/piWakeup "$waketime"
