@@ -42,7 +42,7 @@ else
 fi
 
 # If network test failed more than 5 times (you can change this value to whatever you prefer)
-if [ $network_check_tries -gt 5 ]; then
+if [ "$network_check_tries" -gt 5 ]; then
 echo "Network was not working for the previous $network_check_tries checks."
 # Time to restart VPN and Fona
     echo "Restarting fona"
